@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+*{
+    font-family: "Cabin", sans-serif;
+}
+
+header{
+    background-color: #B6331D;
+}
+
+.navbar{
+    background-color: #B6331D;
+    margin: 0rem 10rem;
+    padding: 1rem 2rem;
+}
+
+.navbar a img{
+    height: 100px;
+    width: 100px;
+}
+
+.navbar ul li{
+    list-style: none;
+}
+
+.navbar ul li a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+}
+
+footer{
+    background-color: #B6331D;
+    height: 10rem;
+}
+
+.footer{
+    font-family: "Bungee", sans-serif;
+    color: white;
+    font-size: 2rem;
+}
