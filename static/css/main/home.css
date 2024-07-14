@@ -1,20 +1,37 @@
-
-
-#warp{
+#warp {
     margin: 0rem 12rem;
 }
 
-.hero{
+.hero {
     background-color: #EDA559;
     /* padding: 1rem 2rem; */
     margin-top: 1.5rem;
     height: 25rem;
     overflow: hidden;
 }
-.content{
-    background-color: #F4F4F4;
-    /* padding: 1rem 2rem; */
+
+.content {
     margin: 1.5rem 0;
-    /* height: 25rem; */
     overflow: hidden;
+}
+
+.item .card {
+    height: 15rem;
+    overflow: hidden;
+    border: none;
+}
+.item .card img{
+    object-fit: fill;
+}
+
+.header-items{
+    background-color:#EDA559 ;
+    color: white;
+} 
+.header-items a{
+    color: white;
+} 
+
+.fa-star{
+    color: #fcd600;
 }

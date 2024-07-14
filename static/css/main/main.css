@@ -4,6 +4,10 @@
     font-family: "Cabin", sans-serif;
 }
 
+body{
+    /* background-color: rgb(46, 46, 46); */
+}
+
 header{
     background-color: #B6331D;
 }
@@ -39,4 +43,12 @@ footer{
     font-family: "Bungee", sans-serif;
     color: white;
     font-size: 2rem;
+}
+
+footer ul li{
+    list-style: none;
+}
+footer ul li a{
+    color: black;
+    font-size: 1.2rem;
 }

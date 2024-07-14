@@ -1,0 +1,25 @@
+[class*="eicon-"] {
+    display: block;
+}
+
+[class*="eicon-"]:before {
+    content: '';
+    display: block;
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-background-size: contain;
+}
+
+.eicon-tiktok {
+    font-size: 1.5rem;
+    background-image: url("data:image/svg+xml,%3c%3fxml version='1.0' encoding='utf-8'%3f%3e%3c!-- Uploaded to: SVG Repo%2c www.svgrepo.com%2c Generator: SVG Repo Mixer Tools --%3e %3csvg fill='black' width='800px' height='800px' viewBox='0 0 512 512' id='icons' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M412.19%2c118.66a109.27%2c109.27%2c0%2c0%2c1-9.45-5.5%2c132.87%2c132.87%2c0%2c0%2c1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14%2c23.9%2c350%2c16%2c350.13%2c16H267.69V334.78c0%2c4.28%2c0%2c8.51-.18%2c12.69%2c0%2c.52-.05%2c1-.08%2c1.56%2c0%2c.23%2c0%2c.47-.05.71%2c0%2c.06%2c0%2c.12%2c0%2c.18a70%2c70%2c0%2c0%2c1-35.22%2c55.56%2c68.8%2c68.8%2c0%2c0%2c1-34.11%2c9c-38.41%2c0-69.54-31.32-69.54-70s31.13-70%2c69.54-70a68.9%2c68.9%2c0%2c0%2c1%2c21.41%2c3.39l.1-83.94a153.14%2c153.14%2c0%2c0%2c0-118%2c34.52%2c161.79%2c161.79%2c0%2c0%2c0-35.3%2c43.53c-3.48%2c6-16.61%2c30.11-18.2%2c69.24-1%2c22.21%2c5.67%2c45.22%2c8.85%2c54.73v.2c2%2c5.6%2c9.75%2c24.71%2c22.38%2c40.82A167.53%2c167.53%2c0%2c0%2c0%2c115%2c470.66v-.2l.2.2C155.11%2c497.78%2c199.36%2c496%2c199.36%2c496c7.66-.31%2c33.32%2c0%2c62.46-13.81%2c32.32-15.31%2c50.72-38.12%2c50.72-38.12a158.46%2c158.46%2c0%2c0%2c0%2c27.64-45.93c7.46-19.61%2c9.95-43.13%2c9.95-52.53V176.49c1%2c.6%2c14.32%2c9.41%2c14.32%2c9.41s19.19%2c12.3%2c49.13%2c20.31c21.48%2c5.7%2c50.42%2c6.9%2c50.42%2c6.9V131.27C453.86%2c132.37%2c433.27%2c129.17%2c412.19%2c118.66Z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+}
+
+.eicon-transmission {
+    font-size: 1.5rem;
+    background-image: url("data:image/svg+xml,%0A%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 9V15' stroke='%23212529' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M12 9V15' stroke='%23212529' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M8 12H13C13.9319 12 14.3978 12 14.7654 11.8478C15.2554 11.6448 15.6448 11.2554 15.8478 10.7654C16 10.3978 16 9.93188 16 9' stroke='%23212529' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z' stroke='%23212529' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+}
