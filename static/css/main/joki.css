@@ -1,0 +1,21 @@
+#uid-server,
+#pilih-item,
+#pembayaran{
+    background-color: #EDA559;
+    width: 100%;
+}
+
+#penjelasan{
+    border: #EDA559 solid 1px;
+}
+.item-warp{
+    width: 10rem;
+}
+.item-image{
+    height: 2rem;
+    width: 2rem;
+}
+
+#desc{
+    resize: none;
+}

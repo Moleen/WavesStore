@@ -1,0 +1,84 @@
+{% extends 'main/template.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main/joki.css') }}">
+{% endblock %}
+
+{% block content %}
+<section id="penjelasan" class="rounded-3 mb-4">
+    <div class="p-4 text-white">
+        <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum odio omnis tempore molestiae, quod reprehenderit eveniet doloribus alias saepe laudantium voluptate, magnam, voluptatem minus? Nulla eligendi eius vero! Placeat, quo.</p>
+    </div>
+</section>
+
+<section id="uid-server" class="rounded-3 mb-4">
+    <div class="p-4 text-white">
+
+        <div class="header-form">
+            <h5>1. Masukkan UID dan Server <span class="text-danger">*</span></h5>
+        </div>
+
+        <div class="d-flex gap-3">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan UID">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Pilih Server">
+        </div>
+
+    </div>
+</section>
+
+<section id="pilih-item" class="rounded-3 mb-4">
+    <div class="p-4 text-white">
+        <div class="header-form">
+            <h5>2. Pilih Item <span class="text-danger">*</span></h5>
+        </div>
+        <div class="d-flex gap-3">
+            <div class="card p-0">
+                <div class="card-body text-center p-2 item-warp">
+                    <img src="https://ditusi.co.id/assets/uploads/typegames/1702353040_fffb7f5b792d8f70fcf5.png"
+                        class="item-image">
+                    <div class="item-name text-wrap p-2">2000 Genesis crystal</div>
+                </div>
+                <div class="card-footer p-0 bg-white">
+                    <p class="p-2 m-0">Rp.10.000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pembayaran" class="rounded-3 mb-4">
+    <div class="p-4 text-white">
+        <div class="header-form">
+            <h5>1. Pembayaran <span class="text-danger">*</span></h5>
+        </div>
+
+        <div class="row row-cols-2 mb-3">
+            <div class="col">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Pilih Pembayaran">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Jumlah">
+            </div>
+        </div>
+        <div class="row row-cols-2 mb-3">
+            <div class="col">
+                <textarea class="form-control no-resize" id="desc" rows="6"></textarea>
+            </div>
+            <div class="col">
+                <p>Deskripsi item :</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur aliquam nobis nisi, assumenda amet
+                    esse magnam voluptas odio, eligendi corrupti ea nesciunt neque deleniti eveniet ex similique eos
+                    quisquam quidem.</p>
+            </div>
+        </div>
+        <div class="row row-cols-2">
+            <div class="col">
+                <input type="text" class="form-control mb-3" id="" placeholder="Masukkan Nomor WA">
+            </div>
+        </div>
+        <a name="" id="" class="btn btn-success" href="#" role="button">Lanjutkan</a>
+
+    </div>
+</section>
+
+{% endblock %}
