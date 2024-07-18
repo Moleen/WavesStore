@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    --red: #B6331D;
+    --yellow: #fcd600;
+    --yellow-hover: #ddbc03;
+    --black: #2e2e2e;
+}
+
+* {
+    font-family: "Cabin", sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--black);
+}
+
+h1 {
+    margin: 0;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: var(--red);
+}
+
+.content {
+    padding: 2rem;
+    width: 75%;
+    overflow: auto;
+}
+
+.sidebar-header {
+    font-family: "Bungee", sans-serif;
+    color: var(--yellow);
+    text-align: left;
+    margin-left: auto;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.navigation ul {
+    margin: 0;
+    padding: 1rem 2rem;
+}
+
+.navigation ul li {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.navigation ul li a {
+    border-radius: 10px;
+    border: white 1px solid;
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.navigation ul li a:hover {
+    color: var(--red);
+}
+
+.navigation ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    /* Start from outside the button (left side) */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(240, 248, 255, 0.973);
+    /* Semi-transparent overlay */
+    transition: left 0.5s ease;
+    z-index: -1;
+    /* Transition for the sliding effect */
+}
+
+.navigation ul li a:hover::before {
+    left: 0;
+}
+
+.navigation ul li a.active {
+    background-color: aliceblue;
+    border-radius: 10px;
+    color: var(--red);
+}
+
+.icon {
+    min-width: 2rem;
+}
+
+.logout {
+    padding: 1rem 2rem;
+}
+
+.logout a {
+    border-radius: 10px;
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "Cabin", sans-serif;
+}
+
+.content-header {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: aliceblue;
+}
+
+h3.title {
+    font-family: "Bungee", sans-serif;
+}
+
+
+.title_header {
+    margin-bottom: 1rem;
+    font-family: "Cabin", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--yellow);
+}

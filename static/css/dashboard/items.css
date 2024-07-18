@@ -1,0 +1,94 @@
+.game_card {
+    width: 15rem;
+    background-color: #f0f8ff3a;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+}
+
+.game_card.selected {
+    outline: 2px solid #b6341d57;
+    box-shadow: 1px 1px 10px 2px #b6341db2
+}
+
+.game_card_img {
+    height: 10rem;
+    width: 100%;
+}
+
+.game_card_name {
+    color: aliceblue;
+    font-weight: 700;
+    text-align: center;
+}
+
+.data_game_warp {
+    background-color: #666363;
+    /* height: 37.5rem; */
+    width: 100%;
+    box-shadow: inset 1px 1px 10px 2px #0000003b;
+}
+
+.data_game_warp .header .title {
+    color: var(--yellow);
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+table.table_coupon {
+    width: 100%;
+    text-align: left;
+}
+
+table.table_coupon td,
+table.table_coupon th {
+    font-family: "Cabin", sans-serif;
+    padding: 1rem;
+}
+
+table.table_coupon tbody td {
+    background-color: #EEEEEE;
+    font-size: 1rem;
+    /* border-bottom: 1px solid #c7c7c7; */
+}
+
+table.table_coupon tbody tr {
+    border-bottom: 1px solid #c7c7c7;
+}
+
+table.table_coupon thead {
+    background: #1C6EA4;
+    background: -moz-linear-gradient(0deg, #b91b00 0%, #b6331d 35%, #f05b41 100%);
+    background: -webkit-linear-gradient(0deg, #b91b00 0%, #b6331d 35%, rgba(240, 91, 65, 1) 100%);
+    background: linear-gradient(0deg, #b91b00 0%, #b6331d 35%, #f05b41 100%);
+    border-bottom: 1px solid #8b8b8b;
+}
+
+table.table_coupon thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.table_coupon thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.table_coupon thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.table_coupon tbody tr:last-child {
+    border: none !important;
+}
+
+.table_coupon tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.table_coupon tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}

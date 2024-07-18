@@ -1,0 +1,67 @@
+.slideshow {
+    height: 25rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button_ {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.button_:hover {
+    background-color: var(--yellow-hover);
+}
+
+table.table_coupon {
+    width: 100%;
+    text-align: left;
+}
+
+table.table_coupon td,
+table.table_coupon th {
+    font-family: "Cabin", sans-serif;
+    padding: 1rem;
+}
+
+table.table_coupon tbody td {
+    background-color: #EEEEEE;
+    font-size: 1rem;
+    /* border-bottom: 1px solid #c7c7c7; */
+}
+table.table_coupon tbody tr {
+    border-bottom: 1px solid #c7c7c7;
+}
+
+table.table_coupon thead {
+    background: #1C6EA4;
+    background: -moz-linear-gradient(0deg, #b91b00 0%, #b6331d 35%, #f05b41 100%);
+    background: -webkit-linear-gradient(0deg, #b91b00 0%, #b6331d 35%, rgba(240, 91, 65, 1) 100%);
+    background: linear-gradient(0deg, #b91b00 0%, #b6331d 35%, #f05b41 100%);
+    border-bottom: 1px solid #8b8b8b;
+}
+
+table.table_coupon thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.table_coupon thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.table_coupon thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.table_coupon tbody tr:last-child {
+    border: none !important;
+}
+.table_coupon tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.table_coupon tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}

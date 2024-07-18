@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: rgb(46, 46, 46);
+    background-color: #2e2e2e;
 }
 
 #content-main{
@@ -55,4 +55,8 @@ footer ul li{
 footer ul li a{
     color: black;
     font-size: 1.2rem;
+}
+
+.fa-star{
+    color: #fcd600;
 }

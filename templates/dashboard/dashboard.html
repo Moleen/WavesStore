@@ -1,0 +1,117 @@
+{% extends 'dashboard/template.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="content-header">
+    <div class="row">
+        <div class="col">
+            <h3 class="title">Dashboard</h3>
+        </div>
+        <div class="col-auto">
+            <h3 class="">Selamat Datang, Atmin</h3>
+        </div>
+    </div>
+</div>
+
+<div class="preview_slideshow_warp mb-5">
+    <div class="slideshow_header">
+        <div class="title_header">Slide Show</div>
+    </div>
+
+    <!-- !SLIDESOW -->
+    <div id="carouselExampleRide" class="carousel slide slideshow rounded-3 mb-3" data-bs-ride="true">
+        <div class="carousel-inner" data-bs-toggle="modal" data-bs-target="#editImage">
+            <div class="carousel-item active">
+                <img src="https://cdn.mos.cms.futurecdn.net/7Cbpe8JbsPYc3ZfhzrP5ae.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn.oneesports.gg/cdn-data/2024/04/WutheringWaves_Characters_LaunchDate_KeyVisual.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/10/honkai-star-rail-hsr-ps5-release.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="slideshow_setting">
+        <button type="button" name="" id="" class="btn button_">
+            Setting
+        </button>
+
+    </div>
+
+    <!-- !MODAL -->
+    <div class="modal fade" id="editImage" tabindex="-1" aria-labelledby="editImageLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editImageLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="coupon_warp">
+    <div class="coupon_header row">
+        <div class="col">
+            <div class="title_header">Coupon</div>
+        </div>
+        <div class="col-auto">
+            <button type="button" name="" id="" class="btn button_">
+                Add
+            </button>
+        </div>
+    </div>
+    <div class="">
+        <table class="table_coupon">
+            <thead>
+                <tr>
+                    <th>Kode Promo</th>
+                    <th>Diskon</th>
+                    <th>Tanggal berakhir</th>
+                    <th>Jumlah Penggunaan</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell1_1</td>
+                    <td>cell2_1</td>
+                    <td>cell3_1</td>
+                    <td>cell4_1</td>
+                    <td>cell5_1</td>
+                </tr>
+                <tr>
+                    <td>cell1_2</td>
+                    <td>cell2_2</td>
+                    <td>cell3_2</td>
+                    <td>cell4_2</td>
+                    <td>cell5_2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
