@@ -1,0 +1,212 @@
+{% extends 'dashboard/template.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/items.css') }}">
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/dashboard/items.js') }}"></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="content-header">
+    <div class="row">
+        <div class="col">
+            <h3 class="title">Items - Joki Game</h3>
+        </div>
+        <div class="col-auto">
+            <div class="btn_">
+                <button type="button" data-open="modal" data-open-target="#edit_game" name="" id=""
+                    class="btn btn-primary mt-3">Add Game</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="joki_game_warp">
+
+    <div class="list_game mb-4">
+        <div class="row row-cols-5">
+            {% if game %}
+            asdasd
+            {% else %}
+            <div class="col">
+                <div class="game_card rounded">
+                    <img src="{{ url_for('static', filename='image/asset/no_image.png') }}" alt=""
+                        class="game_card_img rounded-top">
+                    <div class="game_card_name p-2">No Game</div>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+    <!-- Modal Add Game -->
+    <div class="modal_" id="edit_game">
+        <div class="modal_container">
+            <div class="modal_header">
+                <div class="title">
+                    <h4 class="m-0">Edit Joki Game</h4>
+                </div>
+                <button class="fa-solid fa-xmark btn_" data-action="close" data-close="#edit_game"></button>
+            </div>
+            <div class="modal_body">
+                <div class="header mb-3">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="m-0">Game</h4>
+                        </div>
+                        <div class="col-auto">
+                            {% if games %}
+                            <button type="button" name="" id="add_new_game" class="btn btn-primary">
+                                Tambah Game
+                            </button>
+                            {% else %}
+                            <button type="button" name="" id="add_new_game" class="btn btn-primary" disabled>
+                                Tambah Game
+                            </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-4 joki_items_edit g-3">
+                    {% if games_joki %}
+                    <div class="col">
+                        <div class="game_card rounded">
+                            <img src="https://images.crazygames.com/games/genshin-impact/cover-1602669395924.png" alt=""
+                                class="game_card_img rounded-top">
+                            <div class="game_card_name p-2">{{name}}</div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="col">
+                        <div class="game_card rounded">
+                            <img src="{{ url_for('static', filename='image/asset/no_image.png') }}" alt=""
+                                class="game_card_img rounded-top">
+                            <div class="game_card_name p-2">Default Game</div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="game_desc_in_modal">
+                    <div class="row">
+
+                        <div class="col-auto">
+                            <div class="image_preview_edit_game h-100">
+                                <label for="input_image_game" class="image_input_container h-100">
+                                    <p class="help_text_input text-center p-2">Drag and drop image here or <span
+                                            class="browse_input">Browse</span></p>
+                                    <img src="" alt="" srcset="" id="image_input_preview" hidden>
+                                </label>
+                                <input type="file" name="" id="input_image_game" accept="image/*" hidden>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="input_name_game" class="form-label">Nama Game</label>
+                                <input type="text" class="form-control" id="input_name_game">
+                            </div>
+                            <div class="mb-3">
+                                <label for="game_desc_input" class="form-label">Label notifikasi</label>
+                                <textarea class="form-control" id="game_desc_input" rows="5"></textarea>
+                            </div>
+                            <div class="">
+                                <button type="button" class="btn btn-primary" id="save_game_edit" data-categories="joki" disabled>Save</button>
+                                <button type="button" class="btn btn-danger" disabled>Delete</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="data_game_warp rounded-3 p-3">
+        <div class="header mb-3">
+            <div class="title mb-3">List Game</div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" name="" id="" class="btn btn-primary">
+                        Filter
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <div class="btn btn-primary btn-sm">asdasdsa</div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <table class="table_coupon">
+                <thead>
+                    <tr>
+                        <th>Kode Promo</th>
+                        <th>Diskon</th>
+                        <th>Tanggal berakhir</th>
+                        <th>Jumlah Penggunaan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>cell1_1</td>
+                        <td>cell2_1</td>
+                        <td>cell3_1</td>
+                        <td>cell4_1</td>
+                        <td>cell5_1</td>
+                    </tr>
+                    <tr>
+                        <td>cell1_1</td>
+                        <td>cell2_1</td>
+                        <td>cell3_1</td>
+                        <td>cell4_1</td>
+                        <td>cell5_1</td>
+                    </tr>
+                    <tr>
+                        <td>cell1_1</td>
+                        <td>cell2_1</td>
+                        <td>cell3_1</td>
+                        <td>cell4_1</td>
+                        <td>cell5_1</td>
+                    </tr>
+                    <tr>
+                        <td>cell1_1</td>
+                        <td>cell2_1</td>
+                        <td>cell3_1</td>
+                        <td>cell4_1</td>
+                        <td>cell5_1</td>
+                    </tr>
+                    <tr>
+                        <td>cell1_1</td>
+                        <td>cell2_1</td>
+                        <td>cell3_1</td>
+                        <td>cell4_1</td>
+                        <td>cell5_1</td>
+                    </tr>
+                    <tr>
+                        <td>cell1_1</td>
+                        <td>cell2_1</td>
+                        <td>cell3_1</td>
+                        <td>cell4_1</td>
+                        <td>cell5_1</td>
+                    </tr>
+                    <tr>
+                        <td>cell1_2</td>
+                        <td>cell2_2</td>
+                        <td>cell3_2</td>
+                        <td>cell4_2</td>
+                        <td>cell5_2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,9 +1,18 @@
 .game_card {
-    width: 15rem;
+    width: auto;
     background-color: #f0f8ff3a;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
+}
+
+.joki_items_edit .game_card {
+    background-color: #383838;
+    border: #0000001a solid 1px;
+}
+
+.joki_items_edit .game_card_name {
+    color: aliceblue;
 }
 
 .game_card.selected {
@@ -91,4 +100,40 @@ table.table_coupon thead th {
 
 .table_coupon tbody tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
+}
+
+.game_desc_in_modal {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: solid #0000002a 1px;
+}
+
+.image_preview_edit_game .image_input_container {
+    position: relative;
+    height: auto;
+    width: 20rem;
+    border: #0000002a dashed 1px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.image_preview_edit_game .image_input_container.showing {
+    border: none;
+}
+
+.image_preview_edit_game #image_input_preview {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+#game_desc_input {
+    resize: none;
 }
