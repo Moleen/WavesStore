@@ -1,3 +1,13 @@
+
+.breadcrumb{
+    color: white;
+    --bs-breadcrumb-divider-color: #ffff;
+    --bs-breadcrumb-item-active-color:#ffff; 
+}
+.breadcrumb-item a{
+    color: white;
+}
+
 .game_card {
     width: auto;
     background-color: #f0f8ff3a;
@@ -109,10 +119,18 @@ table.table_coupon thead th {
     border: solid #0000002a 1px;
 }
 
+.no_game{
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .image_preview_edit_game .image_input_container {
     position: relative;
     height: auto;
-    width: 20rem;
+    width: 30rem;
     border: #0000002a dashed 1px;
     border-radius: 0.5rem;
     display: flex;
@@ -136,4 +154,8 @@ table.table_coupon thead th {
 
 #game_desc_input {
     resize: none;
+}
+
+.add_new_game{
+    width: 70vw;
 }

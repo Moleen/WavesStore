@@ -37,30 +37,41 @@ def delete_image_slideshow():
         'status':'success'
         })
 
-@api.route('/api/items/save_game_edit', methods=['POST'])
+@api.route('/api/items/add_new_game', methods=['POST'])
 def save_game_edit():
     game_image = request.files['image_game']
     game_name = request.form.get('name_game')
     desc_name = request.form.get('desc_game')
     categories = request.form.get('categories')
-    if game_image and game_name and desc_name:
-        # Mencoba menyimpan file gambar
-        try:
-            extension = game_image.filename.split('.')[-1]
-            upload_date = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-            gambar_name = f'game_joki-{upload_date}.{extension}'
-            game_image.save(f'static/image/game/{gambar_name}')
-        except Exception as e:
-            return f"{e}"
-        
-        # Menyimpan data ke database
-        data_insert = {
-            'image_name': gambar_name,
-            'game_name': game_name,
-            'desc_game': desc_name,
-            'categories_game': categories,
-        }
-        items_models.insert_game(data_insert)
-        return "success"
-    else:
-        return 'unsuccess'
+    if not game_image:
+        return jsonify({
+            'result' : 'unsucces',
+            'msg' : 'Masukkan gambar game'
+            })
+    elif not game_name:
+        return jsonify({
+            'result' : 'unsucces',
+            'msg' : 'Masukkan nama game'
+            })
+    elif not desc_name:
+        return jsonify({
+            'result' : 'unsucces',
+            'msg' : 'Masukkan deskripsi game'
+            })
+    try:
+        extension = game_image.filename.split('.')[-1]
+        upload_date = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+        gambar_name = f'game_joki-{upload_date}.{extension}'
+        game_image.save(f'static/image/game/{gambar_name}')
+    except Exception as e:
+        return f"{e}"
+    
+    # Menyimpan data ke database
+    data_insert = {
+        'image_name': gambar_name,
+        'game_name': game_name,
+        'desc_game': desc_name,
+        'categories_game': categories,
+    }
+    items_models.insert_game(data_insert)
+    return "success"

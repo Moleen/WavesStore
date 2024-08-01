@@ -1,5 +1,6 @@
 from db import mysql
 import uuid
+import traceback
 
 def get_image(id_target=None):
     if id_target is not None:
@@ -10,7 +11,10 @@ def get_image(id_target=None):
             cursor.close()
             return [{'id_image': row[0], 'image_name': row[1],'date_upload': row[1]} for row in images]
         except:
-            print("cant get users")
+            print("ERROR IN CODE")
+            print("-------------------------------------")
+            print(traceback.format_exc())
+            print("-------------------------------------")
     else:
         try:
             cursor = mysql.connection.cursor()
@@ -19,7 +23,10 @@ def get_image(id_target=None):
             cursor.close()
             return [{'id_image': row[0], 'image_name': row[1],'date_upload': row[1]} for row in images]
         except:
-            print("cant get users")
+            print("ERROR IN CODE")
+            print("-------------------------------------")
+            print(traceback.format_exc())
+            print("-------------------------------------")
 
 def delete_image(id_image):
     try:
@@ -29,7 +36,10 @@ def delete_image(id_image):
         cursor.close()
         return 'success'
     except Exception as e:
-        print("cant get users",e)
+        print("ERROR IN CODE")
+        print("-------------------------------------")
+        print(traceback.format_exc())
+        print("-------------------------------------")
 
 def insert_image(name,date):
     id_image=uuid.uuid1()
@@ -42,4 +52,7 @@ def insert_image(name,date):
         cursor.close()
         print('success')
     except Exception as e:
-        print("cant get users:",e)
+        print("ERROR IN CODE")
+        print("-------------------------------------")
+        print(traceback.format_exc())
+        print("-------------------------------------")

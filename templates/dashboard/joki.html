@@ -12,12 +12,12 @@
 <div class="content-header">
     <div class="row">
         <div class="col">
-            <h3 class="title">Items - Joki Game</h3>
+            <h3 class="title">Items - Joki game</h3>
         </div>
         <div class="col-auto">
             <div class="btn_">
                 <button type="button" data-open="modal" data-open-target="#edit_game" name="" id=""
-                    class="btn btn-primary mt-3">Add Game</button>
+                    class="btn btn-primary mt-3">Setting</button>
             </div>
         </div>
     </div>
@@ -26,8 +26,14 @@
 
     <div class="list_game mb-4">
         <div class="row row-cols-5">
-            {% if game %}
-            asdasd
+            {% for game in games_joki %}
+            <div class="col">
+                <div class="game_card rounded">
+                    <img src="{{ url_for('static', filename='image/game/'~ game.image) }}" alt=""
+                        class="game_card_img rounded-top">
+                    <div class="game_card_name p-2">{{game.game_name}}</div>
+                </div>
+            </div>
             {% else %}
             <div class="col">
                 <div class="game_card rounded">
@@ -36,97 +42,10 @@
                     <div class="game_card_name p-2">No Game</div>
                 </div>
             </div>
-            {% endif %}
+            {% endfor %}
 
         </div>
     </div>
-    <!-- Modal Add Game -->
-    <div class="modal_" id="edit_game">
-        <div class="modal_container">
-            <div class="modal_header">
-                <div class="title">
-                    <h4 class="m-0">Edit Joki Game</h4>
-                </div>
-                <button class="fa-solid fa-xmark btn_" data-action="close" data-close="#edit_game"></button>
-            </div>
-            <div class="modal_body">
-                <div class="header mb-3">
-                    <div class="row">
-                        <div class="col">
-                            <h4 class="m-0">Game</h4>
-                        </div>
-                        <div class="col-auto">
-                            {% if games %}
-                            <button type="button" name="" id="add_new_game" class="btn btn-primary">
-                                Tambah Game
-                            </button>
-                            {% else %}
-                            <button type="button" name="" id="add_new_game" class="btn btn-primary" disabled>
-                                Tambah Game
-                            </button>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row row-cols-4 joki_items_edit g-3">
-                    {% if games_joki %}
-                    <div class="col">
-                        <div class="game_card rounded">
-                            <img src="https://images.crazygames.com/games/genshin-impact/cover-1602669395924.png" alt=""
-                                class="game_card_img rounded-top">
-                            <div class="game_card_name p-2">{{name}}</div>
-                        </div>
-                    </div>
-                    {% else %}
-                    <div class="col">
-                        <div class="game_card rounded">
-                            <img src="{{ url_for('static', filename='image/asset/no_image.png') }}" alt=""
-                                class="game_card_img rounded-top">
-                            <div class="game_card_name p-2">Default Game</div>
-                        </div>
-                    </div>
-                    {% endif %}
-                </div>
-
-                <div class="game_desc_in_modal">
-                    <div class="row">
-
-                        <div class="col-auto">
-                            <div class="image_preview_edit_game h-100">
-                                <label for="input_image_game" class="image_input_container h-100">
-                                    <p class="help_text_input text-center p-2">Drag and drop image here or <span
-                                            class="browse_input">Browse</span></p>
-                                    <img src="" alt="" srcset="" id="image_input_preview" hidden>
-                                </label>
-                                <input type="file" name="" id="input_image_game" accept="image/*" hidden>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mb-3">
-                                <label for="input_name_game" class="form-label">Nama Game</label>
-                                <input type="text" class="form-control" id="input_name_game">
-                            </div>
-                            <div class="mb-3">
-                                <label for="game_desc_input" class="form-label">Label notifikasi</label>
-                                <textarea class="form-control" id="game_desc_input" rows="5"></textarea>
-                            </div>
-                            <div class="">
-                                <button type="button" class="btn btn-primary" id="save_game_edit" data-categories="joki" disabled>Save</button>
-                                <button type="button" class="btn btn-danger" disabled>Delete</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-
-
 
     <div class="data_game_warp rounded-3 p-3">
         <div class="header mb-3">
@@ -208,5 +127,146 @@
         </div>
     </div>
 </div>
+
+<!--Layer 1. MODAL EDIT GAME -->
+<div class="modal_" id="edit_game">
+    <div class="modal_container">
+        <div class="modal_header">
+            <div class="title">
+                <h4 class="m-0">Edit Joki Game</h4>
+            </div>
+            <button class="fa-solid fa-xmark btn_" data-action="close" data-close="#edit_game"></button>
+        </div>
+        <div class="modal_body">
+            <div class="header mb-3">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="m-0">Game</h4>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" name="" id="add_new_game" data-open="modal" data-open-target="#new_game"
+                            class="btn btn-primary">
+                            Tambah Game
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- KONIDISI ADA GAME -->
+            {% if games_joki %}
+            <div class="row row-cols-4 joki_items_edit g-3">
+
+                {% for game in games_joki %}
+
+                <div class="col">
+                    <div class="game_card rounded" id="{{game.id_game}}">
+                        <img src="{{ url_for('static', filename='image/game/'~ game.image) }}" alt=""
+                            class="game_card_img rounded-top">
+                        <div class="game_card_name p-2">{{game.game_name}}</div>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+                <div class="game_desc_in_modal">
+                    <div class="row">
+
+                        <div class="col-auto">
+                            <div class="image_preview_edit_game h-100">
+                                <label for="input_image_game" class="image_input_container h-100">
+                                    <p class="help_text_input text-center p-2">Drag and drop image here or <span
+                                            class="browse_input">Browse</span></p>
+                                    <img src="" alt="" srcset="" id="image_input_preview" hidden>
+                                </label>
+                                <input type="file" name="" id="input_image_game" accept="image/*" hidden disabled>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="input_name_game" class="form-label">Nama Game</label>
+                                <input type="text" class="form-control" id="input_name_game" disabled>
+                            </div>
+                            <div class="">
+                                <label for="game_desc_input" class="form-label">Label notifikasi</label>
+                                <textarea class="form-control" id="game_desc_input" rows="5" disabled></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            {% else %}
+
+            <div class="col">
+                <div class="no_game border border-2 mb-3 rounded">
+                    <h4>No game</h4>
+                </div>
+            </div>
+
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+<!--Layer 2. MODAL TAMBAH GAME -->
+<div class="modal_" id="new_game">
+    <div class="modal_container add_new_game" >
+        <div class="modal_header">
+            <div class="title">
+                <h4 class="m-0">Add new joki game</h4>
+            </div>
+            <button class="fa-solid fa-xmark btn_" data-action="close" data-close="#new_game"></button>
+        </div>
+        <div class="modal_body">
+
+            <form action="/api/items/add_new_game" method="post" enctype="multipart/form-data" id="form_add_new_game">  
+
+                <div class="border rounded-3 mb-3 p-4">
+    
+                    <div class="row">
+    
+                        <div class="col-auto">
+                            <div class="image_preview_edit_game h-100">
+                                <label for="input_image_new_game" class="image_input_container h-100">
+                                    <p class="help_text_input text-center p-2">Drag and drop image here or <span
+                                            class="browse_input">Browse</span></p>
+                                    <img src="" alt="" srcset="" id="image_input_preview" hidden>
+                                </label>
+                                <input type="file" name="image_game" id="input_image_new_game" data-info="input_image" accept="image/*" hidden>
+                            </div>
+                        </div>
+    
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="input_name_game" class="form-label">Nama Game</label>
+                                <input type="text" name="name_game" class="form-control" id="input_name_game">
+                            </div>
+                            <div class="">
+                                <label for="game_desc_input" class="form-label">Label notifikasi</label>
+                                <textarea class="form-control" name="desc_game" id="game_desc_input" rows="10"></textarea>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary">
+                        Tambahkan
+                    </button>
+                    <button type="button" name="" id="" class="btn btn-danger" data-action="close" data-close="#new_game">
+                        Batal
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}

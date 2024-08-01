@@ -37,13 +37,13 @@ $(".sidebar_item.link").on("click", function () {
 // OPEN MODAL ---------------------------------------------
 $('[data-open="modal"]').on("click", function () {
   var target = $(this).data("open-target");
+  $('#modal').load(`modal/${$(this).data("dir")}.html`)
   $(target).css("display", "flex");
 
   setTimeout(function () {
     $(target).addClass("modal_active");
   }, 100);
-
-  localStorage.setItem("modal_open", "open" + target);
+  add_json_local_storage("modal_open",`open${target}`)
 });
 
 // CLOSE MODAL ---------------------------------------------
@@ -53,23 +53,37 @@ $('[data-action="close"]').on("click", function () {
   setTimeout(function () {
     $(target).css("display", "none");
   }, 500);
-  localStorage.setItem("modal_open", "close" + target);
+  delete_json_local_storage("modal_open", "open" + target);
 });
+
+// PREVIEW IMAGE ---------------------------------------------
+$('[data-info="input_image"]').on('change', function(){
+  let reader = new FileReader();
+  reader.onload = function (event) {
+    $("#image_input_preview").attr("src", event.target.result);
+    $("#image_input_preview").removeAttr("hidden");
+  };
+  reader.readAsDataURL($(this).get(0).files[0])
+})
 
 // FUNCTION --------------------------
 function opened_modal() {
-  val = localStorage.getItem("modal_open");
+  var val = JSON.parse(localStorage.getItem("modal_open"));
   if (val) {
-    value = val.split("#");
-    modal_status = value[0];
-    target = `#${value[1]}`;
+    // perulangan json
+    for(let i in val) {
+      console.log(val[i]);
+      value = val[i].split("#");
+      modal_status = value[0];
+      target = `#${value[1]}`;
+      
+      if (modal_status == "open") {
+        $(target).css("display", "flex");
+        $(target).addClass("modal_active");
+      }
+
+    };
   
-    if (modal_status == "open") {
-      $(target).css("display", "flex");
-      $(target).addClass("modal_active");
-    } else {
-      localStorage.removeItem("modal_open");
-    }
   }
 
 }
@@ -82,4 +96,18 @@ function opened_collapse(){
     $("#icon_right").toggleClass("rotated_down");
   };
 
+}
+
+function add_json_local_storage(key,inserted){
+  var data = localStorage.getItem(key);
+  var storage_array = data ? JSON.parse(data) : [];
+  storage_array.push(inserted)
+  localStorage.setItem(key,JSON.stringify(storage_array))
+}
+
+function delete_json_local_storage(key,item_deleted){
+  var data = localStorage.getItem(key);
+  myArray = JSON.parse(data)
+  myArray = myArray.filter(item => item !== item_deleted);
+  localStorage.setItem(key,JSON.stringify(myArray))
 }

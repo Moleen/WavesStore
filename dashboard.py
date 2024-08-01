@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request,redirect, url_for, jsonify
-from models import dashboard_models
+from models import dashboard_models,items_models
 
 dashboard = Blueprint('dashboard', __name__)
 
@@ -10,7 +10,8 @@ def dashboard_():
 
 @dashboard.route('/items/joki_game')
 def joki():
-    return render_template('dashboard/joki.html')
+    games_joki = items_models.get_game('joki')
+    return render_template('dashboard/joki.html',games_joki = games_joki)
 
 @dashboard.route('/items/topup')
 def top_up():
