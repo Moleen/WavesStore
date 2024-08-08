@@ -15,7 +15,8 @@ def joki():
 
 @dashboard.route('/items/topup')
 def top_up():
-    return render_template('dashboard/topup.html')
+    games_topup = items_models.get_game('topup')
+    return render_template('dashboard/topup.html',games_topup = games_topup)
 
 @dashboard.route('/testimoni_dashboard')
 def testimoni_dashboard():

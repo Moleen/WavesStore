@@ -52,3 +52,37 @@ def get_game(categories):
         print("-------------------------------------")
         print(traceback.format_exc())
         print("-------------------------------------")
+
+def get_game_by_id(id_game):
+    cursor = mysql.connection.cursor()
+    try:
+        cursor.execute("SELECT * FROM games WHERE id_game = %s", (id_game,))
+        data_game = cursor.fetchall()
+        cursor.close()
+        return [
+                {
+                    'id_game': row[0],
+                    'id_image': row[1],
+                    'game_name': row[2],
+                    'deskripsi_name': row[3]
+                }
+                for row in data_game
+                ]
+    except:
+        print("ERROR IN CODE")
+        print("-------------------------------------")
+        print(traceback.format_exc())
+        print("-------------------------------------")
+
+def delete_game_by_id(id_game):
+    cursor = mysql.connection.cursor()
+    try:
+        cursor.execute("DELETE FROM games WHERE id_game = %s", (id_game,))
+        mysql.connection.commit()
+        cursor.close()
+        return 'success'
+    except:
+        print("ERROR IN CODE")
+        print("-------------------------------------")
+        print(traceback.format_exc())
+        print("-------------------------------------")

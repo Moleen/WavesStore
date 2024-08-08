@@ -39,9 +39,9 @@ def delete_image_slideshow():
 
 @api.route('/api/items/add_new_game', methods=['POST'])
 def save_game_edit():
-    game_image = request.files['image_game']
-    game_name = request.form.get('name_game')
-    desc_name = request.form.get('desc_game')
+    game_image = request.files['input_image_new_game']
+    game_name = request.form.get('input_name_new_game')
+    desc_name = request.form.get('new_game_desc_input')
     categories = request.form.get('categories')
     if not game_image:
         return jsonify({
@@ -61,7 +61,7 @@ def save_game_edit():
     try:
         extension = game_image.filename.split('.')[-1]
         upload_date = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-        gambar_name = f'game_joki-{upload_date}.{extension}'
+        gambar_name = f'game_{categories}-{upload_date}.{extension}'
         game_image.save(f'static/image/game/{gambar_name}')
     except Exception as e:
         return f"{e}"
@@ -75,3 +75,15 @@ def save_game_edit():
     }
     items_models.insert_game(data_insert)
     return "success"
+
+@api.route('/api/items/get_game_data', methods=['POST'])
+def get_game_data():
+    id_game = request.form.get('id_game')
+    data = items_models.get_game_by_id(id_game)
+    return jsonify(data)
+
+@api.route('/api/items/delete_game', methods=['POST'])
+def delete_game():
+    id_game = request.form.get('id_game')
+    items_models.delete_game_by_id(id_game)
+    return f'{id_game} deleted'

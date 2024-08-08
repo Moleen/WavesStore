@@ -1,11 +1,11 @@
+.unrezised {
+    resize: none;
+}
 
-.breadcrumb{
+.breadcrumb {
     color: white;
     --bs-breadcrumb-divider-color: #ffff;
-    --bs-breadcrumb-item-active-color:#ffff; 
-}
-.breadcrumb-item a{
-    color: white;
+    --bs-breadcrumb-item-active-color: #ffff;
 }
 
 .game_card {
@@ -13,6 +13,7 @@
     background-color: #f0f8ff3a;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
 
 }
 
@@ -39,6 +40,11 @@
     color: aliceblue;
     font-weight: 700;
     text-align: center;
+    white-space: nowrap;
+    /* Mencegah teks membungkus ke baris berikutnya */
+    overflow: hidden;
+    /* Sembunyikan teks yang melebihi lebar elemen */
+    text-overflow: ellipsis;
 }
 
 .data_game_warp {
@@ -119,7 +125,35 @@ table.table_coupon thead th {
     border: solid #0000002a 1px;
 }
 
-.no_game{
+
+.info_game {
+   margin-bottom: 1rem;
+}
+
+.button_grp{
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.button_game {
+    background-color: #0d6efd;
+    border: none;
+    color: aliceblue;
+    min-width: 5rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+.button_game:disabled{
+    opacity: 0.5;
+}
+.button_game.not{
+    background-color: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}
+
+.no_game {
     width: 100%;
     height: 20rem;
     display: flex;
@@ -152,10 +186,6 @@ table.table_coupon thead th {
     border-radius: 0.5rem;
 }
 
-#game_desc_input {
-    resize: none;
-}
-
-.add_new_game{
+.add_new_game {
     width: 70vw;
 }

@@ -18,7 +18,7 @@ def get_image(id_target=None):
     else:
         try:
             cursor = mysql.connection.cursor()
-            cursor.execute("SELECT * FROM images")
+            cursor.execute("SELECT * FROM images WHERE categories = 'slideshow'")
             images = cursor.fetchall()
             cursor.close()
             return [{'id_image': row[0], 'image_name': row[1],'date_upload': row[1]} for row in images]
@@ -45,8 +45,8 @@ def insert_image(name,date):
     id_image=uuid.uuid1()
     try:
         cursor = mysql.connection.cursor()
-        sql = "INSERT INTO images (id_image,image, date_upload) VALUES (%s,%s, %s)"
-        data = (id_image,name, date)
+        sql = "INSERT INTO images (id_image,image, date_upload,categories) VALUES (%s,%s, %s,%s)"
+        data = (id_image,name, date,'slideshow')
         cursor.execute(sql, data)
         mysql.connection.commit()
         cursor.close()

@@ -53,6 +53,7 @@ $('[data-action="close"]').on("click", function () {
   setTimeout(function () {
     $(target).css("display", "none");
   }, 500);
+  console.log($('#input_image_new_game').val());
   delete_json_local_storage("modal_open", "open" + target);
 });
 
@@ -64,6 +65,8 @@ $('[data-info="input_image"]').on('change', function(){
     $("#image_input_preview").removeAttr("hidden");
   };
   reader.readAsDataURL($(this).get(0).files[0])
+  console.log($(this).val());
+  
 })
 
 // FUNCTION --------------------------
@@ -80,6 +83,8 @@ function opened_modal() {
       if (modal_status == "open") {
         $(target).css("display", "flex");
         $(target).addClass("modal_active");
+      }else{
+        
       }
 
     };

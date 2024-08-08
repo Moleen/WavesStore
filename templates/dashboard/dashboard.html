@@ -40,7 +40,7 @@
 
             {% else %}
             <div class="carousel-item active">
-                <img src="https://www.its.ac.id/tmesin/wp-content/uploads/sites/22/2022/07/no-image.png" class="d-block w-100" alt="...">
+                <img src="{{ url_for('static', filename='image/asset/no_image.png') }}" class="d-block w-100" alt="...">
             </div>
             {% endfor %}
         </div>
