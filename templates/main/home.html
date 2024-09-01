@@ -59,13 +59,15 @@
         </div>
         <div class="items row row-cols-5 g-3">
             {% for joki in data_joki %}
-            <div class="item col">
-                <div class="card shadow">
-                    <img src="{{ url_for('static', filename='image/game/'~ joki.image) }}" alt=""
-                        class="card-image h-100">
+            <a href="/joki/{{joki.id_game}}" class="card-link">
+                <div class="item col">
+                    <div class="card shadow">
+                        <img src="{{ url_for('static', filename='image/game/'~ joki.image) }}" alt=""
+                            class="card-image h-100">
+                    </div>
+                    <p class="m-0 p-1 text-white">{{joki.game_name}}</p>
                 </div>
-                <p class="m-0 p-1 text-white">{{joki.game_name}}</p>
-            </div>
+            </a>
 
             {% else %}
 
@@ -81,45 +83,46 @@
         </div>
         <div class="items row row-cols-5 g-3">
             {% for topup in data_topup %}
-
-            <div class="item col">
-                <div class="card shadow">
-                    <img src="{{ url_for('static', filename='image/game/'~ topup.image) }}" alt=""
-                        class="card-image h-100">
-                </div>
-                <p class="m-0 p-1 text-white">{{topup.game_name}}</p>
-            </div>
-            {% else %}
-
-            {% endfor %}
-
-        </div>
-    </div>
-
-    <div class="container-fluids testimoni">
-        <div class="d-flex w-100 justify-content-between text-white">
-            <h3>Testimoni</h3>
-            <a href="" class="text-white">Lihat Selengkapnya</a>
-        </div>
-        <div class="owl-carousel" id="testi">
-            <div class="card" style="overflow:hidden;">
-                <div class="card-body">
-                    <h4>CallMeLII</h4>
-                    <h5>Joki Rawat Akun - whutering waves</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolor illo eius tempore sequi
-                        libero, totam, impedit distinctio ullam dolorem eveniet culpa praesentium excepturi eligendi
-                        quam aliquid. Saepe, nulla ducimus.</p>
-                    <div class="">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+            <a href="" class="card-link">
+                <div class="item col">
+                    <div class="card shadow">
+                        <img src="{{ url_for('static', filename='image/game/'~ topup.image) }}" alt=""
+                            class="card-image h-100">
                     </div>
+                    <p class="m-0 p-1 text-white">{{topup.game_name}}</p>
+                </div>
+            </a>
+        {% else %}
+
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="container-fluids testimoni">
+    <div class="d-flex w-100 justify-content-between text-white">
+        <h3>Testimoni</h3>
+        <a href="" class="text-white">Lihat Selengkapnya</a>
+    </div>
+    <div class="owl-carousel" id="testi">
+        <div class="card" style="overflow:hidden;">
+            <div class="card-body">
+                <h4>CallMeLII</h4>
+                <h5>Joki Rawat Akun - whutering waves</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolor illo eius tempore sequi
+                    libero, totam, impedit distinctio ullam dolorem eveniet culpa praesentium excepturi eligendi
+                    quam aliquid. Saepe, nulla ducimus.</p>
+                <div class="">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 </div>
 {% endblock %}

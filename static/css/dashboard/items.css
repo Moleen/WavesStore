@@ -153,6 +153,11 @@ table.table_coupon thead th {
     color: #dc3545;
 }
 
+#button_edit{
+    font-weight:500;
+    cursor: pointer;
+}
+
 .no_game {
     width: 100%;
     height: 20rem;

@@ -36,8 +36,10 @@ $(".sidebar_item.link").on("click", function () {
 
 // OPEN MODAL ---------------------------------------------
 $('[data-open="modal"]').on("click", function () {
+  console.log('clicked');
+  
   var target = $(this).data("open-target");
-  $('#modal').load(`modal/${$(this).data("dir")}.html`)
+  console.log(target);
   $(target).css("display", "flex");
 
   setTimeout(function () {
@@ -53,7 +55,7 @@ $('[data-action="close"]').on("click", function () {
   setTimeout(function () {
     $(target).css("display", "none");
   }, 500);
-  console.log($('#input_image_new_game').val());
+  // console.log($('#input_image_new_game').val());
   delete_json_local_storage("modal_open", "open" + target);
 });
 
@@ -61,6 +63,7 @@ $('[data-action="close"]').on("click", function () {
 $('[data-info="input_image"]').on('change', function(){
   let reader = new FileReader();
   reader.onload = function (event) {
+    console.log(event.target.result);
     $("#image_input_preview").attr("src", event.target.result);
     $("#image_input_preview").removeAttr("hidden");
   };

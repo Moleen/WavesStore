@@ -87,3 +87,18 @@ def delete_game():
     id_game = request.form.get('id_game')
     items_models.delete_game_by_id(id_game)
     return f'{id_game} deleted'
+
+@api.route('/api/items/update_game', methods=['POST'])
+def update_game():
+    id_game = request.form.get('id_game')
+    image_game = request.files['image_game']
+    game_name = request.form.get('name_game')
+    game_desc = request.form.get('deskripsi_name')
+    data = {
+        'game_name': game_name,
+        'desc_game': game_desc,
+    }
+
+    print(image_game)
+    
+    return items_models.update_game(id_game,data)

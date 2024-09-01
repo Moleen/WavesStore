@@ -86,3 +86,9 @@ def delete_game_by_id(id_game):
         print("-------------------------------------")
         print(traceback.format_exc())
         print("-------------------------------------")
+
+def update_game(id_game,data):
+    game_name = data['game_name']
+    desc_game = data['desc_game']
+
+    return game_name
